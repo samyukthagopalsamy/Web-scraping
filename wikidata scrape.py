@@ -1,26 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas as pd
-
-
-# In[2]:
-
 
 url="https://en.wikipedia.org/wiki/List_of_European_countries_by_area"
 html=urlopen(url)
 soup=BeautifulSoup(html,'lxml')
 #names of the countries is under class Wikitable Sortable
 my_table=soup.find('table',{'class':'wikitable sortable'})
-
-
-# In[10]:
-
 
 country=[]
 population=[]
@@ -44,52 +33,3 @@ df=pd.DataFrame()
 df['Country']=country
 df['Population']=population
 df
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
